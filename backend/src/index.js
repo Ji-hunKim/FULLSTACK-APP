@@ -8,18 +8,24 @@ const mongoose = require("mongoose");
 
 dotenv.config();
 
+const corsOptions = {
+  origin: "http://localhost:5173",
+  credentials: true,
+};
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected..."))
   .catch((err) => console.log(err));
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Hello world!22   ");
 });
+
+app.use("/users", require("./routes/users"));
 
 app.use(express.static(path.join(__dirname, "../uploads")));
 // 가상경로 지정도 가능
