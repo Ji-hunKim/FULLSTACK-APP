@@ -49,7 +49,7 @@ const userSlice = createSlice({
         state.error = action.payload;
         toast.error(action.payload);
       });
-  },
+  }, 
 });
 
 export default userSlice.reducer;
