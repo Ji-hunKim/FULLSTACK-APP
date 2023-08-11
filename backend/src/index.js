@@ -34,3 +34,4 @@ app.use(express.static(path.join(__dirname, "../uploads")));
 app.listen(port, () => {
   console.log("${port}번에서 실행되었습니다.");
 });
+
