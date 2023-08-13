@@ -53,8 +53,12 @@ router.post("/login", async (req, res, next) => {
   }
 });
 
-router.post("/users/login", (req, res) => {});
-
-router.post("/users/auth", (req, res) => {});
+router.post("/logout", auth, async (req, res, next) => {
+  try {
+    return res.sendStatus(200);
+  } catch (error) {
+    next(error);
+  }
+});
 
 module.exports = router;

@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { logoutUser } from "../../../store/thunkFunctions";
 
 const routes = [
   { to: "/login", name: "로그인", auth: false },
@@ -10,7 +11,14 @@ const routes = [
 
 const NavItem = ({ mobile }) => {
   const isAuth = useSelector((state) => state.user?.isAuth);
-  const handleLogout = () => {};
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logoutUser()).then(() => {
+      navigate("/login");
+    });
+  };
   return (
     <ul
       className={`text-md justify-center w-full flex gap-4 ${
