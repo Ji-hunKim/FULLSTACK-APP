@@ -32,7 +32,7 @@ const Navbar = () => {
         </div>
 
         {/* mobile nav-items */}
-        <div className="block sm:hidden">{menu && <NavItem />}</div>
+        <div className="block sm:hidden">{menu && <NavItem mobile/>}</div>
       </div>
     </section>
   );
