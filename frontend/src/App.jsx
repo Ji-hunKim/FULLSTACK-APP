@@ -3,6 +3,10 @@ import "./App.css";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import UploadProductPage from "./pages/UploadProductPage";
+import DetailProductPage from "./pages/DetailProductPage";
+import CartPage from "./pages/CartPage";
+import HistoryPage from "./pages/HistoryPage";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
 import "react-toastify/dist/ReactToastify.css";
@@ -51,6 +55,10 @@ function App() {
         {/* 로그인 한 사람만 갈 수 있는 경로 */}
         <Route element={<ProtectedRoutes isAuth={isAuth} />}>
           <Route path="/protected" element={<ProtectedPage />} />
+          <Route path="/product/upload" element={<UploadProductPage />} />
+          <Route path="/product/:productId" element={<DetailProductPage />} />
+          <Route path="/user/cart" element={<CartPage />} />
+          <Route path="/history" element={<HistoryPage />} />
         </Route>
 
         {/* 로그인한 사람은 갈  수 없는 경로 */}
@@ -58,7 +66,6 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
         </Route>
-        
       </Route>
     </Routes>
   );
