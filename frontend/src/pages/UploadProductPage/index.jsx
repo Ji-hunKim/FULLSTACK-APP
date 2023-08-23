@@ -68,7 +68,7 @@ const UploadProductPage = () => {
         </div>
       </form>
     </section>
-  ); 
+  );  
 };  
 
 export default UploadProductPage;
