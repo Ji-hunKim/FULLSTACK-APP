@@ -55,12 +55,12 @@ const UploadProductPage = () => {
   return (
     <section>
       <div className="text-center m-7">
-        <h1>예상 상품 업로드</h1>
+        <h1>Product Upload</h1>
       </div>
 
       <form className="mt-6" onSubmit={handleSubmit}>
         <div className="mt-4">
-          <label htmlFor="title">이름</label>
+          <label htmlFor="title">Name</label>
           <input
             className="w-full px-4 py-2 bg-white border rounded-md border-spacing-4"
             name="title"
@@ -71,7 +71,7 @@ const UploadProductPage = () => {
         </div>
 
         <div className="mt-4">
-          <label htmlFor="description">설명</label>
+          <label htmlFor="description">Description</label>
           <input
             className="w-full px-4 py-2 bg-white border rounded-md"
             name="description"
@@ -82,7 +82,7 @@ const UploadProductPage = () => {
         </div>
 
         <div className="mt-4">
-          <label htmlFor="price">가격</label>
+          <label htmlFor="price">Price</label>
           <input
             className="w-full px-4 py-2 bg-white border rounded-md"
             type="number"
@@ -94,7 +94,7 @@ const UploadProductPage = () => {
         </div>
 
         <div className="mt-4">
-          <label htmlFor="continents">지역</label>
+          <label htmlFor="continents">Continent</label>
           <select
             className="w-full px-4 mt-2 bg-white border rounded-md"
             name="continents"
@@ -115,7 +115,7 @@ const UploadProductPage = () => {
             type="submit"
             className="w-full px-4 text-white bg-black rounded-md hover:bg-gray-700 py-2"
           >
-            생성하기
+            Upload
           </button>
         </div>
       </form>

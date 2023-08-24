@@ -5,17 +5,17 @@ import { logoutUser } from "../../../store/thunkFunctions";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const routes = [
-  { to: "/login", name: "로그인", auth: false },
-  { to: "/register", name: "회원가입", auth: false },
-  { to: "/product/upload", name: "업로드", auth: true },
+  { to: "/login", name: "Login", auth: false },
+  { to: "/register", name: "Sign up", auth: false },
+  { to: "/product/upload", name: "Upload", auth: true },
   {
     to: "/user/cart",
-    name: "카트",
+    name: "Cart",
     auth: true,
     icon: <AiOutlineShoppingCart style={{ fontSize: "1.4rem" }} />,
   },
-  { to: "", name: "로그아웃", auth: true },
-  { to: "/history", name: "주문목록", auth: true },
+  { to: "", name: "Logout", auth: true },
+  { to: "/history", name: "Order List", auth: true },
 ];
 
 const NavItem = ({ mobile }) => {
@@ -37,7 +37,7 @@ const NavItem = ({ mobile }) => {
       {routes.map(({ to, name, auth, icon }) => {
         if (isAuth !== auth) return null;
 
-        if (name === "로그아웃") {
+        if (name === "Logout") {
           return (
             <li
               key={name}

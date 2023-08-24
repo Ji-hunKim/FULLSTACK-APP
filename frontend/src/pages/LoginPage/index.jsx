@@ -24,21 +24,21 @@ const LoginPage = () => {
   };
 
   const userEmail = {
-    required: "필수 필드입니다.",
+    required: "Required field.",
   }; 
 
   const userPassword = {
-    required: "필수 필드입니다.",
+    required: "Required field",
     minLength: {
       value: 6,
-      message: "최소 6자입니다.",
+      message: "Password length should be at least 6",
     },
   };
 
   return (
     <section className="flex flex-col justify-center mt-20 max-w-[400px] m-auto">
       <div className="p-6 bg-white rounded-md shadow">
-        <h1 className="text-3xl front-semibold text-center">로그인</h1>
+        <h1 className="text-3xl front-semibold text-center">Login</h1>
         <form className="mt-6" onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-2">
             <label
@@ -84,13 +84,13 @@ const LoginPage = () => {
               type="submit"
               className="w-full bg-black text-white px-4 py-2 rounded-md hover:bg-gray-700 duration-200"
             >
-              로그인
+              Login
             </button>
           </div>
           <p className="mt-8 text-xs font-light text-center text-gray-700">
-            아이디가 없다면{" "}
+            If you didn't sign up yet, please join us!{" "}
             <a href="/register" className="font-medium hover:underline">
-              회원가입
+              Sign up
             </a>
           </p>
         </form>

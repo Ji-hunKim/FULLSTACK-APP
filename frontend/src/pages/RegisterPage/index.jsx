@@ -27,25 +27,25 @@ const RegisterPage = () => {
   };
 
   const userEmail = {
-    required: "필수 필드입니다.",
+    required: "Required field",
   };
 
   const userName = {
-    required: "필수 필드입니다.",
+    required: "Required field",
   };
 
   const userPassword = {
-    required: "필수 필드입니다.",
+    required: "Required field",
     minLength: {
       value: 6,
-      message: "최소 6자입니다.",
+      message: "Password length should be at least 6",
     },
   };
 
   return (
     <section className="flex flex-col justify-center mt-20 max-w-[400px] m-auto">
       <div className="p-6 bg-white rounded-md shadow">
-        <h1 className="text-3xl front-semibold text-center">회원가입</h1>
+        <h1 className="text-3xl front-semibold text-center">Sign up</h1>
         <form className="mt-6" onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-2">
             <label
@@ -109,13 +109,13 @@ const RegisterPage = () => {
               type="submit"
               className="w-full bg-black text-white px-4 py-2 rounded-md hover:bg-gray-700 duration-200"
             >
-              회원가입
+              Sign up
             </button>
           </div>
           <p className="mt-8 text-xs font-light text-center text-gray-700">
-            아이디가 있다면{" "}
+            If you already signed up{" "}
             <a href="/login" className="font-medium hover:underline">
-              로그인
+              Login
             </a>
           </p>
         </form>
