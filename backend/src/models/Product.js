@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+const { default: mongoose, Schema } = require("mongoose");
 
 const productSchema = mongoose.Schema({
-  wrtier: {
+  writer: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
