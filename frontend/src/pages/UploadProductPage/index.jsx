@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import axiosInstance from "../../utils/axios";
 import { useNavigate } from "react-router-dom";
+import FileUpload from "../../components/FileUpload";
 
 const continents = [
   { key: 1, value: "Africa" },
@@ -23,7 +24,7 @@ const UploadProductPage = () => {
     images: [],
   });
 
-  const userData = useSelector(state => state.user?.userData);
+  const userData = useSelector((state) => state.user?.userData);
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -34,10 +35,17 @@ const UploadProductPage = () => {
     }));
   };
 
+  const handleImages = (newImages) => {
+    setProduct((prevState) => ({
+      ...prevState,
+      images: newImages,
+    }));
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // 이렇게 해도 되고 
-    // const { title, description, price, images, continents } = product;
+    // 이렇게 해도 되고
+    // constb { title, description, price, images, continents } = product;
     const body = {
       writer: userData.id,
       // 이렇게 해도 됨
@@ -59,6 +67,7 @@ const UploadProductPage = () => {
       </div>
 
       <form className="mt-6" onSubmit={handleSubmit}>
+        <FileUpload images={product.images} onImageChange={handleImages}/>
         <div className="mt-4">
           <label htmlFor="title">Name</label>
           <input
