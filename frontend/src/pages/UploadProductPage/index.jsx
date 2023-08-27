@@ -36,8 +36,8 @@ const UploadProductPage = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    //이렇게 해도 되고 
-    const { title, description, price, images, continents } = product;
+    // 이렇게 해도 되고 
+    // const { title, description, price, images, continents } = product;
     const body = {
       writer: userData.id,
       // 이렇게 해도 됨
