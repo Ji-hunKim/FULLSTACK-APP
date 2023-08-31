@@ -16,9 +16,8 @@ const LandingPage = () => {
   });
 
   useEffect(() => {
-    fetchProducts({skip, limit})
-  }, [])
-  
+    fetchProducts({ skip, limit });
+  }, []);
 
   const fetchProducts = async (
     skip,
