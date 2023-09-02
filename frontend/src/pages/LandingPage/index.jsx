@@ -19,13 +19,13 @@ const LandingPage = () => {
     fetchProducts({ skip, limit });
   }, []);
 
-  const fetchProducts = async (
+  const fetchProducts = async ({
     skip,
     limit,
     loadMore = false,
     filters = {},
-    searchTerm = ""
-  ) => {
+    searchTerm = "",
+  }) => {
     const params = {
       skip,
       limit,
@@ -35,7 +35,13 @@ const LandingPage = () => {
 
     try {
       const response = await axiosInstance.get("/products", { params });
-      setproducts(response.data.products);
+
+      if (loadMore) {
+        setproducts([...products, ...response.data.products]);
+      } else {
+        setproducts(response.data.products);
+      }
+      sethasMore(response.data.hasMore)
     } catch (error) {
       console.error(error);
     }
