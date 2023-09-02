@@ -41,10 +41,21 @@ const LandingPage = () => {
     }
   };
 
+  const handleLoadMore = () => {
+    const body = {
+      skip: skip + limit,
+      limit,
+      loadMore: true,
+      filters,
+    };
+    fetchProducts(body);
+    setskip(skip + limit);
+  };
+
   return (
     <section>
       <div className="text-center m-7">
-        <h2>Travel Packages Online Shopping Mall</h2>
+        <h2>Online Shopping Mall</h2>
       </div>
       {/* Filter */}
       <div className="flex gap-3">
@@ -66,13 +77,16 @@ const LandingPage = () => {
         ))}
       </div>
       {/* Load More */}
-      (hasMore &&
-      <div className="flex justify-center mt-5">
-        <button className="px-4 py-2 mt-5 text-white bg-black round-md hover:bg-gray-500">
-          더 보기
-        </button>
-      </div>
-      )
+      {hasMore && (
+        <div className="flex justify-center mt-5">
+          <button
+            onClick={handleLoadMore}
+            className="px-4 py-2 mt-5 text-white bg-black round-md hover:bg-gray-500"
+          >
+            더 보기
+          </button>
+        </div>
+      )}
     </section>
   );
 };
