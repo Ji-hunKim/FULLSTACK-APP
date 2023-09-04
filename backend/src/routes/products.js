@@ -23,7 +23,7 @@ router.get("/", async (req, res, next) => {
       } else {
         findArgs[key] = req.query.filters[key];
       }
-    }
+    }  
   }
 
   try {
