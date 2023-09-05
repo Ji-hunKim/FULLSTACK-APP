@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
 
-const SearchInput = () => {
+const SearchInput = ({ searchTerm, onSearch }) => {
   return (
-    <div>SearchInput</div>
-  )
-}
+    <input
+      className="p-2 border border-gray-300 rounded-md"
+      type="text"
+      placeholder="search title"
+      onChange={onSearch}
+      value={searchTerm}
+    />
+  );
+};
 
-export default SearchInput
+export default SearchInput;
