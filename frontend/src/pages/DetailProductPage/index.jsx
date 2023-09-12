@@ -33,7 +33,7 @@ const DetailedProductPage = () => {
       <div className="flex gap-4">
         {/* ProductImage */}
         <div className="w-1/2">
-          {/* <ProductImage product={product} /> */}
+          <ProductImage product={product} />
         </div>
 
         {/* ProductInfo */}
