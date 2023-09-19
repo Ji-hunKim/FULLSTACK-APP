@@ -14,7 +14,6 @@ const DetailedProductPage = () => {
         const response = await axiosInstance.get(
           `/products/${productId}?type=single`
         );
-        console.log(response);
         setproduct(response.data[0]);
       } catch (error) {
         console.error(error);
@@ -38,7 +37,7 @@ const DetailedProductPage = () => {
 
         {/* ProductInfo */}
         <div className="w-1/2">
-          <ProductInfo procuct={product} />
+          <ProductInfo product={product} />
         </div>
       </div>
     </section>
