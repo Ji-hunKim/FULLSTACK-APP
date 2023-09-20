@@ -1,9 +1,33 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getCartItems } from "../../store/thunkFunctions";
 
-const index = () => {
-  return (
-    <div>index</div>
-  )
-}
+const CartPage = () => {
+  const userData = useSelector((state) => state.user?.userData);
+  const dispatch = useDispatch;
 
-export default index
+  useEffect(() => {
+    let cartItemIds = [];
+
+    if (userData?.cart && userData.cart > 0) {
+      userData.cart.forEach((item) => {
+        cartItemIds.push(item.id);
+      });
+
+      const body = {
+        cartItemIds,
+        userCart: userData.cart
+      };
+
+      dispatch(getCartItems(body));
+    }
+
+    return () => {
+      
+    };
+  }, [dispatch, userData]);
+
+  return <div>CartPage</div>;
+};
+
+export default CartPage;
