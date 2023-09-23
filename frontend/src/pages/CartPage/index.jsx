@@ -4,12 +4,12 @@ import { getCartItems } from "../../store/thunkFunctions";
 
 const CartPage = () => {
   const userData = useSelector((state) => state.user?.userData);
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
 
   useEffect(() => {
     let cartItemIds = [];
 
-    if (userData?.cart && userData.cart > 0) {
+    if (userData?.cart && userData.cart.length > 0) {
       userData.cart.forEach((item) => {
         cartItemIds.push(item.id);
       });
@@ -31,3 +31,4 @@ const CartPage = () => {
 };
 
 export default CartPage;
+ 
