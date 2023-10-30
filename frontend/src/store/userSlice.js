@@ -71,6 +71,7 @@ const userSlice = createSlice({
         state.userData = initialState.userData;
         state.isAuth = false;
         localStorage.removeItem("accessToken");
+        toast.error(action.payload);
       })
 
       .addCase(logoutUser.pending, (state) => {

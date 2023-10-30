@@ -68,12 +68,13 @@ export const addToCart = createAsyncThunk(
 
 export const getCartItems = createAsyncThunk(
   "user/getCartItems",
-  async ({ cartItemsIds, userCart }, thunkAPI) => {
+  async ({ cartItemIds, userCart }, thunkAPI) => {
     try {
       const response = await axiosInstance.get(
-        `/products/${cartItemsIds}?type=array`
+        `/products/${cartItemIds}?type=array`
       );
 
+      // product 데이터 요청보내서 가져오면 (response) cart와 합쳐주는 것
       userCart.forEach((cartItem) => {
         response.data.forEach((productDetail, index) => {
           if (cartItem.id === productDetail._id) {

@@ -55,7 +55,6 @@ router.get("/:productId", async (req, res, next) => {
   if (type === "array") {
     // id=3123123, 213123,123123
     // -> {'123213','123213',123123}
-    console.log()
     let ids = productIds.split(",");
     productIds = ids.map((item) => {
       return item;
